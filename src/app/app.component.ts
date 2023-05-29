@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidebarToggle } from './shared/interfaces/sidebar-toggle.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SimpleStock-frontend';
+
+  isSidebarCollapsed = false;
+  screenWidth = 0;
+
+  onToggleSidebar(data: SidebarToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSidebarCollapsed = data.collapsed;
+  }
 }
