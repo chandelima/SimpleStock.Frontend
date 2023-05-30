@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SidebarToggle } from './shared/interfaces/sidebar-toggle.interface';
+import { SidebarToggle } from './template/shared/interfaces/sidebar-toggle.interface';
 
 @Component({
   selector: 'app-root',

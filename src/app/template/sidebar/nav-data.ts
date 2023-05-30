@@ -1,4 +1,4 @@
-import { Navdata } from "src/app/shared/interfaces/navdata.interface";
+import { Navdata } from "../shared/interfaces/navdata.interface";
 
 export const navbarData: Navdata[] = [
   {
@@ -7,44 +7,28 @@ export const navbarData: Navdata[] = [
     label: 'Dashboard',
   },
   {
-    routeLink: 'products',
-    icon: 'ph ph-house',
-    label: 'Products'
-  },
-  {
-    routeLink: 'statistics',
-    icon: 'ph ph-house',
-    label: 'Statistics'
-  },
-  {
-    routeLink: 'coupens',
-    icon: 'ph ph-house',
-    label: 'Coupens',
+    routeLink: 'orders',
+    icon: 'ph ph-shopping-cart',
+    label: 'Vendas',
     items: [
       {
-        routeLink: 'coupens/list',
-        label: 'List Coupens'
+        routeLink: 'orders/list',
+        label: 'Listar Vendas'
       },
       {
-        routeLink: 'coupens/create',
-        label: 'Create Coupens'
+        routeLink: 'orders/process',
+        label: 'Processar Vendas'
       }
     ]
   },
   {
-    routeLink: 'pages',
-    icon: 'ph ph-house',
-    label: 'Pages'
+    routeLink: 'customers',
+    icon: 'ph ph-identification-card',
+    label: 'Clientes'
   },
   {
-    routeLink: 'media',
-    icon: 'ph ph-house',
-    label: 'Media'
-  },
-  {
-    routeLink: 'settings',
-    icon: 'ph ph-house',
-    label: 'Settings'
-  },
-
+    routeLink: 'products',
+    icon: 'ph ph-tag',
+    label: 'Produtos'
+  }
 ]

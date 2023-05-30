@@ -1,28 +1,15 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { navbarData } from './nav-data';
-import { SidebarToggle } from 'src/app/shared/interfaces/sidebar-toggle.interface';
-import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { fadeInOut } from 'src/app/shared/helper';
 import { Router } from '@angular/router';
-import { Navdata } from 'src/app/shared/interfaces/navdata.interface';
+import { fadeInOut } from '../shared/helper';
+import { SidebarToggle } from '../shared/interfaces/sidebar-toggle.interface';
+import { Navdata } from '../shared/interfaces/navdata.interface';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [
-    fadeInOut,
-    trigger('rotate', [
-      transition(':enter', [
-        animate('1000ms',
-          keyframes([
-            style({transform: 'rotate(0deg)', offset: '0'}),
-            style({transform: 'rotate(2turn)', offset: '1'})
-          ])
-        )
-      ])
-    ])
-  ]
+  animations: [ fadeInOut ]
 })
 export class SidebarComponent implements OnInit {
 

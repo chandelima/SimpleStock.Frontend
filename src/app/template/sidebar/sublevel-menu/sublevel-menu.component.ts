@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Component, Input } from "@angular/core";
-import { Navdata } from "src/app/shared/interfaces/navdata.interface";
+import { Navdata } from "../../shared/interfaces/navdata.interface";
 
 @Component({
   selector: 'app-sublevel-menu',

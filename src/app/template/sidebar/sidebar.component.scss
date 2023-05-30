@@ -15,22 +15,24 @@
       width: 100%;
 
       .logo {
-          background: #fff;
-          text-align: center;
-          width: 3rem;
-          min-width: 3rem;
-          border-radius: 0.313rem;
-          padding: 0.313rem;
-          font-size: 24px;
-          font-weight: 900;
-          cursor: pointer;
-          border: none;
+        font-family: 'Nunito', 'Roboto', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        padding: 0.313rem;
+        background: #fff;
+        text-align: center;
+        width: 3rem;
+        min-width: 3rem;
+        border-radius: 0.313rem;
+        cursor: pointer;
+        border: none;
       }
 
       .logo-text {
-          margin-left: 1.5rem;
-          font-size: 24px;
-          font-weight: 700;
+          font-family: 'Nunito', 'Roboto', sans-serif;
+          font-weight: 400;
+          font-size: 1.4rem;
+          margin-left: 1rem;
           color: #fff;
       }
 
@@ -164,6 +166,8 @@
   overflow-y: auto;
   visibility: hidden;
   height: calc(100% - 3.65rem);
+  scrollbar-width: thin;
+  scrollbar-color: #556268 transparent;
 }
 
 .sidebar-nav,
@@ -192,10 +196,4 @@
 .scrollwrap::-webkit-scrollbar-thumb {
   background-color: #556268;
   border-radius: 20px;
-}
-
-// works on firefox
-.scrollwrap {
-  scrollbar-width: thin;
-  scrollbar-color: #556268 transparent;
 }
