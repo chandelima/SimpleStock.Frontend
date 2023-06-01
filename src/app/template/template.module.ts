@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BodyComponent } from './body/body.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { BodyComponent } from './body/body.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import SublevelMenuComponent from './sidebar/sublevel-menu/sublevel-menu.component';
+import { SublevelMenuComponent } from './sidebar/sublevel-menu/sublevel-menu.component';
 
 const components = [
   BodyComponent,
@@ -28,4 +29,4 @@ const components = [
     SidebarComponent
   ]
 })
-export default class TemplateModule { }
+export class TemplateModule { }

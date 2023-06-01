@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Component, Input } from "@angular/core";
+
 import { Navdata } from "../../shared/interfaces/navdata.interface";
 
 @Component({
@@ -21,7 +22,7 @@ import { Navdata } from "../../shared/interfaces/navdata.interface";
     ])
   ]
 })
-export default class SublevelMenuComponent {
+export class SublevelMenuComponent {
 
   @Input() data: Navdata = {
     routeLink: '',
