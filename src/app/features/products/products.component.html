@@ -14,48 +14,13 @@
         </p-button>
       </div>
       <p-button
-        styleClass="p-button-sm p-button-secondary"
+        styleClass="p-button-sm p-button-secondary" (click)="formVisible=true"
         label="Novo" icon="ph-bold ph-plus" iconPos="left">
       </p-button>
     </div>
     <!-- Table -->
-    <p-table [value]="products">
-      <ng-template pTemplate="header">
-          <tr>
-              <th pSortableColumn="name">
-                Nome
-                <i class="ph ph-arrows-down-up"></i>
-              </th>
-              <th pSortableColumn="amount">
-                Quantidade
-                <i class="ph ph-arrows-down-up"></i>
-              </th>
-              <th pSortableColumn="price">
-                Preço
-                <i class="ph ph-arrows-down-up"></i>
-              </th>
-              <th pSortableColumn="createdAt">
-                Data de Criação
-                <i class="ph ph-arrows-down-up"></i>
-              </th>
-              <th>
-              </th>
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-product>
-          <tr>
-              <td>{{product.name}}</td>
-              <td>{{product.amount}}</td>
-              <td>{{product.price | currency: 'BRL'}}</td>
-              <td>{{product.createdAt | date: 'dd/MM/yyyy'}}</td>
-              <td class="bt-actions">
-                <i class="ph-bold ph-pencil-simple edit"></i>
-                <i (click)="confirmDeleteDialog(product)"
-                  class="ph-bold ph-x ml-3 remove">
-                </i>
-              </td>
-          </tr>
-      </ng-template>
-    </p-table>
+    <app-products-list [products]="products"></app-products-list>
+    <!-- Form -->
+    <app-products-form [formVisible]="formVisible" (setFormVisible)="setFormVisible($event)"></app-products-form>
   </div>
 </div>

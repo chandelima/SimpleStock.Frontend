@@ -35,6 +35,12 @@ a {
   }
 }
 
+.invalid-text {
+  display: block;
+  margin-left: 0.25rem;
+  color: var(--red-600);
+  height: 14px;
+}
 
 .page {
   display: flex;
