@@ -1,0 +1,44 @@
+<p-table [value]="products">
+  <ng-template pTemplate="header">
+      <tr>
+          <th pSortableColumn="name">
+            Nome
+            <i class="ph ph-arrows-down-up"></i>
+          </th>
+          <th pSortableColumn="amount" class="text-center">
+            Quantidade
+            <i class="ph ph-arrows-down-up"></i>
+          </th>
+          <th pSortableColumn="price" class="text-center">
+            Preço
+            <i class="ph ph-arrows-down-up"></i>
+          </th>
+          <th pSortableColumn="createdAt" class="text-center">
+            Data de Criação
+            <i class="ph ph-arrows-down-up"></i>
+          </th>
+          <th>
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+      <tr>
+          <td>{{product.name}}</td>
+          <td class="text-center">{{product.amount}}</td>
+          <td class="text-center">{{product.price | currency: 'BRL'}}</td>
+          <td class="text-center">{{product.createdAt | date: 'dd/MM/yyyy'}}</td>
+          <td class="bt-actions" style="text-align: end;">
+            <i class="ph-bold ph-pencil-simple edit" (click)="edit(product)">
+            </i>
+            <i (click)="delete(product)"
+              class="ph-bold ph-x ml-3 remove">
+            </i>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
+<!-- Form -->
+<app-products-form
+  [formVisible]="formVisible" [product]="productToEdit"
+  (setFormVisible)="setFormVisible($event)">
+</app-products-form>

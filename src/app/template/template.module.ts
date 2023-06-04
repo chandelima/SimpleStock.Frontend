@@ -6,6 +6,7 @@ import { BodyComponent } from './body/body.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { SublevelMenuComponent } from './sidebar/sublevel-menu/sublevel-menu.component';
+import { PrimengModule } from './primeng/primeng.module';
 
 const components = [
   BodyComponent,
@@ -22,6 +23,7 @@ const components = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    PrimengModule,
     RouterModule
   ],
   exports: [

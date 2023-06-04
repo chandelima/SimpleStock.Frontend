@@ -8,8 +8,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { ProductsComponent } from './products/products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PrimengModule } from "../template/primeng/primeng.module";
-import { ProductsListComponent } from './products/products-list/products-list.component';
-import { ProductsFormComponent } from './products/products-form/products-form.component';
+import { ProductsListComponent } from './products/components/products-list/products-list.component';
+import { ProductsFormComponent } from './products/components/products-form/products-form.component';
 
 @NgModule({
   declarations: [

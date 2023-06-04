@@ -6,6 +6,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
 
 
 const primeNgModules = [
@@ -14,7 +15,8 @@ const primeNgModules = [
   DialogModule,
   InputNumberModule,
   InputTextModule,
-  TableModule
+  TableModule,
+  ToastModule
 ]
 
 @NgModule({
