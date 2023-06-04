@@ -1,6 +1,26 @@
 <div class="page">
   <h1>Produtos</h1>
   <div class="page-container">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam minus velit pariatur! Explicabo maiores eligendi enim architecto vero voluptate placeat, excepturi magnam est ut, earum, veritatis animi minima error minus.</p>
+    <!-- Top Actions -->
+    <div class="top-actions mb-3">
+      <div>
+        <input
+          class="p-inputtext-sm" type="text" pInputText
+          [(ngModel)]="searchText" placeholder="Busca"
+        />
+        <p-button
+          styleClass="ml-2 p-button-sm p-button-outlined"
+          icon="ph-bold ph-magnifying-glass">
+        </p-button>
+      </div>
+      <p-button
+        styleClass="p-button-sm p-button-secondary" (click)="formVisible=true"
+        label="Novo" icon="ph-bold ph-plus" iconPos="left">
+      </p-button>
+    </div>
+    <!-- Table -->
+    <app-products-list [products]="products"></app-products-list>
+    <!-- Form -->
+    <app-products-form [formVisible]="formVisible" (setFormVisible)="setFormVisible($event)"></app-products-form>
   </div>
 </div>

@@ -1,5 +1,7 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -9,27 +11,35 @@
 
 body {
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: .5rem;
-  background-color: #FFF;
-  margin: 1.25rem 0;
-  box-shadow: 0 .25rem .5rem #ecedef;
+a {
+  color: unset;
+  font-family: var(--font-family);
 
-  .card-head {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #edf1f7;
-    font-size: 1rem;
-    font-weight: 600;
+  &:link {
+    text-decoration: none;
   }
 
-  .card-body {
-    padding: 1rem 1.5rem;
+  &:visited {
+    text-decoration: none;
   }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.invalid-text {
+  display: block;
+  margin-left: 0.25rem;
+  color: var(--red-600);
+  height: 14px;
 }
 
 .page {

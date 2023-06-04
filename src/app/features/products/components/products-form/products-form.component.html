@@ -1,0 +1,66 @@
+<p-dialog [header]="product ? 'Alteração de Produto' : 'Cadastro de Produto'"
+  [(visible)]="formVisible" [modal]="true" [draggable]="true"
+  [baseZIndex]="10000" [responsive]="true" (onHide)="cancel()"
+  [style]="{ left: '8rem', width: '50%' }" [focusOnShow]="true"
+>
+  <ng-template pTemplate="body">
+    <form [formGroup]="form" ngSubmit="">
+      <div class="grid p-fluid formgrid">
+        <!-- Name Control -->
+        <div class="field col-12 md:col-12">
+          <label>Nome</label>
+          <input type="text" autofocus formControlName="name"
+            placeholder="Nome" pInputText required
+            [ngClass]="applyControlInvalid('name')" >
+          <small class="invalid-text">
+              <span *ngIf="verifyValidTouched('name')">
+                Nome deve ser informado
+              </span>
+          </small>
+        </div>
+        <!-- Amount Control -->
+        <div class="field col-12 md:col-6">
+            <label>Quantidade</label>
+            <p-inputNumber id="amount" mode="decimal"
+              formControlName="amount"  [minFractionDigits]="0"
+              [ngClass]="applyControlInvalid('amount')"
+              [maxFractionDigits]="2" locale="pt-BR"
+              placeholder="Quantidade" [required]="true">
+            </p-inputNumber>
+            <small class="invalid-text">
+              <span *ngIf="verifyValidTouched('amount')">
+                Quantidade deve ser informada
+              </span>
+            </small>
+        </div>
+        <!-- Price Control -->
+        <div class="field col-12 md:col-6">
+          <label>Preço</label>
+          <p-inputNumber id="price" formControlName="price"
+            (onInput)="setFormPrice($event)"
+            prefix="R$ " [ngClass]="applyControlInvalid('price')"
+            mode="decimal" [minFractionDigits]="2" locale="pt-BR"
+            [maxFractionDigits]="2" placeholder="Preço">
+          </p-inputNumber>
+          <small class="invalid-text">
+            <span *ngIf="verifyValidTouched('price')">
+              Preço deve ser informado
+            </span>
+          </small>
+        </div>
+      </div>
+  </form>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <!-- Cancel Button -->
+    <button pButton (click)="cancel()" label="Cancelar" tabindex="-1"
+      icon="ph-bold ph-x" styleClass="p-button-text"
+      class="p-button-outlined">
+    </button>
+    <!-- Save Button -->
+    <button pButton (click)="save()" [disabled]="form.invalid"
+      label="Salvar" icon="ph-bold ph-check" styleClass="p-button-text"
+      class="p-button-outlined">
+    </button>
+  </ng-template>
+</p-dialog>
