@@ -1,4 +1,4 @@
-<p-table [value]="products">
+<p-table [value]="dataList">
   <ng-template pTemplate="header">
       <tr>
           <th pSortableColumn="name">
@@ -21,16 +21,16 @@
           </th>
       </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-product>
+  <ng-template pTemplate="body" let-data>
       <tr>
-          <td>{{product.name}}</td>
-          <td class="text-center">{{product.amount}}</td>
-          <td class="text-center">{{product.price | currency: 'BRL'}}</td>
-          <td class="text-center">{{product.createdAt | date: 'dd/MM/yyyy'}}</td>
+          <td>{{data.name}}</td>
+          <td class="text-center">{{data.amount}}</td>
+          <td class="text-center">{{data.price | currency: 'BRL'}}</td>
+          <td class="text-center">{{data.createdAt | date: 'dd/MM/yyyy'}}</td>
           <td class="bt-actions" style="text-align: end;">
-            <i class="ph-bold ph-pencil-simple edit" (click)="edit(product)">
+            <i class="ph-bold ph-pencil-simple edit" (click)="edit(data)">
             </i>
-            <i (click)="delete(product)"
+            <i (click)="delete(data)"
               class="ph-bold ph-x ml-3 remove">
             </i>
           </td>
@@ -39,6 +39,6 @@
 </p-table>
 <!-- Form -->
 <app-products-form
-  [formVisible]="formVisible" [product]="productToEdit"
+  [formVisible]="formVisible" [data]="dataToEdit"
   (setFormVisible)="setFormVisible($event)">
 </app-products-form>

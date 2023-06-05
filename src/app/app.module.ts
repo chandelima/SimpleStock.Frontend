@@ -1,11 +1,10 @@
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 // Portuguese Currency Settings
 import ptBr from '@angular/common/locales/pt';
-import { registerLocaleData } from '@angular/common';
 registerLocaleData(ptBr);
 
 import { AppRoutingModule } from './app-routing.module';
